@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost',
+    'url' => 'http://tlmld.app',
 
     /*
     |--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Europe/Copenhagen',
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'da',
 
     /*
     |--------------------------------------------------------------------------
@@ -143,6 +143,11 @@ return [
         App\Providers\AppServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        /*
+         * Laravel IDE helper
+         */
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 
     ],
 
