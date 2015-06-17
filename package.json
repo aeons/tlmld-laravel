@@ -2,6 +2,7 @@
   "private": true,
   "devDependencies": {
     "gulp": "~3.9",
-    "laravel-elixir": "~2.0"
+    "laravel-elixir": "~2.0",
+    "laravel-elixir-livereload": "0.0.3"
   }
 }

@@ -1,4 +1,5 @@
 var elixir = require('laravel-elixir');
+require('laravel-elixir-livereload');
 
 var paths = {
     'bootstrap': './vendor/bower_components/bootstrap-sass/assets/',
@@ -6,7 +7,7 @@ var paths = {
 };
 
 elixir(function (mix) {
-    mix.sass('admin/admin.scss',
+    mix.sass('admin/app.scss',
         elixir.config.cssOutput + '/admin',
         {includePaths: [paths.bootstrap + 'stylesheets/']})
         .copy(paths.bootstrap + 'fonts/bootstrap/**', 'public/fonts')
@@ -14,4 +15,6 @@ elixir(function (mix) {
             paths.jquery + 'jquery.js',
             paths.bootstrap + 'javascripts/bootstrap.js'
         ], 'public/js/app.js', './');
+
+    mix.livereload();
 });
