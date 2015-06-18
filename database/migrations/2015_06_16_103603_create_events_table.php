@@ -22,6 +22,7 @@ class CreateEventsTable extends Migration
             $table->timestamp('starts_at');
             $table->timestamp('ends_at')->nullable();
             $table->boolean('payment_needed')->default(false);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
