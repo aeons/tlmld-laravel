@@ -5,6 +5,6 @@
 @section('content')
     <div class="row">
         <h1>Kommende begivenheder</h1>
-        <a href="asd">Opret ny begivenhed</a>
+        {!! link_to_route('admin::events::create', 'Opret ny begivenhed', [], ['class' => 'btn btn-default']) !!}
     </div>
 @endsection
