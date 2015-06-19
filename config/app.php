@@ -132,6 +132,7 @@ return [
         App\Providers\AppServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
@@ -184,6 +185,7 @@ return [
         'Form'          => Collective\Html\FormFacade::class,
         'Html'          => Collective\Html\HtmlFacade::class,
         'BootstrapForm' => Watson\BootstrapForm\Facades\BootstrapForm::class,
+        'DebugBar'      => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];

@@ -15,7 +15,8 @@
     "cviebrock/eloquent-sluggable": ">=3.0.0-beta",
     "laravelcollective/html": "~5.1",
     "watson/bootstrap-form": "~1.0",
-    "nesbot/carbon": "^1.19"
+    "nesbot/carbon": "^1.19",
+    "barryvdh/laravel-debugbar": "^2.0"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",
