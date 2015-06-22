@@ -1,6 +1,7 @@
 <?php
 
 use App\Event;
+use Carbon\Carbon;
 use Faker\Factory;
 use Illuminate\Database\Seeder;
 
@@ -15,17 +16,17 @@ class EventsSeeder extends Seeder
         Event::create([
             'title'          => $faker->sentence(4) . ' (active)',
             'description'    => $faker->paragraph(5),
-            'active_at'      => new DateTime,
-            'inactive_at'    => (new DateTime)->add(new DateInterval('P10D')),
-            'starts_at'      => new DateTime('2015-07-04 18:00'),
+            'active_on'      => Carbon::now(),
+            'inactive_on'    => Carbon::now()->addDays(10),
+            'starts_at'      => new Carbon('2015-07-04 18:00'),
             'payment_needed' => true,
         ]);
 
         Event::create([
             'title'          => $faker->sentence(4) . ' (not yet active)',
             'description'    => $faker->paragraph(5),
-            'active_at'      => (new DateTime)->add(new DateInterval('P10D')),
-            'inactive_at'    => (new DateTime)->add(new DateInterval('P20D')),
+            'active_on'      => Carbon::now()->addDays(10),
+            'inactive_on'    => Carbon::now()->addDays(20),
             'starts_at'      => new DateTime('2015-07-04 18:00'),
             'payment_needed' => true,
         ]);
@@ -33,8 +34,8 @@ class EventsSeeder extends Seeder
         Event::create([
             'title'          => $faker->sentence(4) . ' (inactive)',
             'description'    => $faker->paragraph(5),
-            'active_at'      => (new DateTime)->sub(new DateInterval('P20D')),
-            'inactive_at'    => (new DateTime)->sub(new DateInterval('P10D')),
+            'active_on'      => Carbon::now()->subDays(20),
+            'inactive_on'    => Carbon::now()->subDays(10),
             'starts_at'      => new DateTime('2015-07-04 18:00'),
             'payment_needed' => true,
         ]);
@@ -42,8 +43,8 @@ class EventsSeeder extends Seeder
         Event::create([
             'title'          => $faker->sentence(4) . ' (past event)',
             'description'    => $faker->paragraph(5),
-            'active_at'      => new DateTime('2015-03-01'),
-            'inactive_at'    => new DateTime('2015-03-15'),
+            'active_on'      => new DateTime('2015-03-01'),
+            'inactive_on'    => new DateTime('2015-03-15'),
             'starts_at'      => new DateTime('2015-05-01 12:00'),
             'payment_needed' => true,
         ]);
