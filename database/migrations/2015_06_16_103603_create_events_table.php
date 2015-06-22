@@ -17,10 +17,10 @@ class CreateEventsTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->text('description');
-            $table->timestamp('active_at');
-            $table->timestamp('inactive_at')->nullable();
             $table->timestamp('starts_at');
             $table->timestamp('ends_at')->nullable();
+            $table->date('active_on');
+            $table->date('inactive_on')->nullable();
             $table->boolean('payment_needed')->default(false);
             $table->softDeletes();
             $table->timestamps();
