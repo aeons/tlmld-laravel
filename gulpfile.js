@@ -10,9 +10,10 @@ var sassOptions = {
 };
 
 elixir(function (mix) {
-    mix.sass('admin/app.scss', elixir.config.cssOutput + '/admin', sassOptions)
+    mix.sass('admin/app.scss', 'public/css/admin', sassOptions)
+        .sass('admin/typography.scss', 'public/css/admin/typography.css', sassOptions)
         .copy(paths.bootstrap + 'fonts/bootstrap/**', 'public/fonts')
-        .babel(['common.js', 'admin/da.js', 'admin/app.js'], 'public/js/admin/app.js')
+        .babel(['common.js', 'admin/app.js'], 'public/js/admin/app.js')
         .scripts(['admin/da.js'], 'public/js/admin/da.js');
 
     mix.livereload();
