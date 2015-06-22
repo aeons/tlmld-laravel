@@ -4,7 +4,17 @@
 
 @section('content')
     <div class="row">
-        <h1>Kommende begivenheder</h1>
-        {!! link_to_route('admin::events::create', 'Opret ny begivenhed', [], ['class' => 'btn btn-default']) !!}
+        <div class="page-header">
+            <h1>Kommende begivenheder</h1>
+        </div>
+    </div>
+    <div class="row">
+        <ul>
+            @forelse ($events as $e)
+                <li>{!! link_to_route('admin.event.show', $e->title, $e->slug) !!}</li>
+            @empty
+                <p>Ingen kommende begivenheder.</p>
+            @endforelse
+        </ul>
     </div>
 @endsection

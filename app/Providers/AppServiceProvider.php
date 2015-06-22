@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Event;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +15,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->composer('*', function ($view) {
+            $route = Request::route();
+            if ($route) {
+                $action = $route->getAction();
+                $controller = class_basename($action['controller']);
+                list($controller, $action) = explode('@', $controller);
+                $controller = strtolower(substr($controller, 0, -10));
+                $view->with(compact('controller', 'action'));
+            }
+        });
     }
 
     /**
@@ -23,6 +34,5 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
     }
 }

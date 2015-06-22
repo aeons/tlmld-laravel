@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Event;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use Illuminate\Http\Response;
@@ -15,6 +16,6 @@ class AdminController extends Controller
      */
     public function dashboard()
     {
-        return view('admin.dashboard');
+        return view('admin.dashboard', ['events' => Event::current()->get()]);
     }
 }

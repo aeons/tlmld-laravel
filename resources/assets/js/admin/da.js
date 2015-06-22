@@ -1,4 +1,5 @@
 (function (moment) { 'use strict';
+    if (!moment) return;
     var da = moment.defineLocale('da', {
         months : 'januar_februar_marts_april_maj_juni_juli_august_september_oktober_november_december'.split('_'),
         monthsShort : 'jan_feb_mar_apr_maj_jun_jul_aug_sep_okt_nov_dec'.split('_'),

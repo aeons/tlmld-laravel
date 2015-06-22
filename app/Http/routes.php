@@ -5,7 +5,7 @@ Route::get('/', function () {
 });
 
 Route::group([
-    'as'        => 'admin::',
+    'as'        => 'admin.',
     'namespace' => 'Admin',
     'prefix'    => 'a'
 ], function () {
@@ -15,16 +15,33 @@ Route::group([
     ]);
 
     Route::group([
-        'as'     => 'event::',
-        'prefix' => 'begivenhed'
+        'as'     => 'event.',
+        'prefix' => 'begivenheder'
     ], function () {
+
         Route::get('/ny', [
-            'as'   => 'new',
-            'uses' => 'EventController@new'
+            'as'   => 'create',
+            'uses' => 'EventController@create'
         ]);
         Route::post('/', [
-            'as'   => 'create',
-            'uses' => 'EventController@new'
+            'as'   => 'store',
+            'uses' => 'EventController@store'
+        ]);
+        Route::get('/{slug}/rediger', [
+            'as'   => 'edit',
+            'uses' => 'EventController@edit'
+        ]);
+        Route::put('/{slug}', [
+            'as'   => 'update',
+            'uses' => 'EventController@update'
+        ]);
+        Route::delete('/{slug}', [
+            'as'   => 'destroy',
+            'uses' => 'EventController@destroy'
+        ]);
+        Route::get('/{slug}', [
+            'as'   => 'show',
+            'uses' => 'EventController@show'
         ]);
     });
 });

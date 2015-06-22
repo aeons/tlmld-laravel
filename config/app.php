@@ -136,6 +136,7 @@ return [
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Jenssegers\Date\DateServiceProvider::class,
         Watson\BootstrapForm\BootstrapFormServiceProvider::class,
     ],
     /*
@@ -185,7 +186,7 @@ return [
         'Form'          => Collective\Html\FormFacade::class,
         'Html'          => Collective\Html\HtmlFacade::class,
         'BootstrapForm' => Watson\BootstrapForm\Facades\BootstrapForm::class,
-        'DebugBar'      => Barryvdh\Debugbar\Facade::class,
+        'Debugbar'      => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];

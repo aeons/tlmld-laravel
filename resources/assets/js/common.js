@@ -1,4 +1,4 @@
-class Util {
+class Router {
     constructor(router) {
         this.router = router;
     }
