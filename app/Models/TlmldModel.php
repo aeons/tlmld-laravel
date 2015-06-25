@@ -6,7 +6,7 @@ use DateTime;
 use Eloquent;
 use Jenssegers\Date\Date;
 
-class Model extends Eloquent
+class TlmldModel extends Eloquent
 {
     /**
      * Return a timestamp as DateTime object.

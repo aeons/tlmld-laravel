@@ -8,7 +8,7 @@ use Cviebrock\EloquentSluggable\SluggableTrait;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Event extends Model implements SluggableInterface
+class Event extends TlmldModel implements SluggableInterface
 {
     use SoftDeletes, SluggableTrait;
 
@@ -34,6 +34,14 @@ class Event extends Model implements SluggableInterface
         'inactive_on',
         'deleted_at',
     ];
+
+    public function registrations() {
+        return $this->hasMany(Registration::class);
+    }
+
+    public function options() {
+        return $this->hasMany(Option::class);
+    }
 
     /**
      * @param Builder $query

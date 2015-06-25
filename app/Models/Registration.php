@@ -2,10 +2,9 @@
 
 namespace Tlmld\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Registration extends Model
+class Registration extends TlmldModel
 {
     use SoftDeletes;
 
@@ -15,4 +14,14 @@ class Registration extends Model
      * @var array
      */
     protected $dates = ['deleted_at'];
+
+    public function event()
+    {
+        return $this->belongsTo(Event::class);
+    }
+
+    public function choices()
+    {
+        return $this->belongsToMany(Choice::class);
+    }
 }
