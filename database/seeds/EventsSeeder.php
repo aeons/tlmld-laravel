@@ -1,6 +1,6 @@
 <?php
 
-use App\Event;
+use App\Models\Event;
 use Carbon\Carbon;
 use Faker\Factory;
 use Illuminate\Database\Seeder;
@@ -18,7 +18,7 @@ class EventsSeeder extends Seeder
             'description'    => $faker->paragraph(5),
             'active_on'      => Carbon::now(),
             'inactive_on'    => Carbon::now()->addDays(10),
-            'starts_at'      => new Carbon('2015-07-04 18:00'),
+            'starts_at'      => Carbon::now()->addDays(20),
             'payment_needed' => true,
         ]);
 
@@ -27,7 +27,7 @@ class EventsSeeder extends Seeder
             'description'    => $faker->paragraph(5),
             'active_on'      => Carbon::now()->addDays(10),
             'inactive_on'    => Carbon::now()->addDays(20),
-            'starts_at'      => new DateTime('2015-07-04 18:00'),
+            'starts_at'      => Carbon::now()->addDays(30),
             'payment_needed' => true,
         ]);
 
@@ -36,7 +36,7 @@ class EventsSeeder extends Seeder
             'description'    => $faker->paragraph(5),
             'active_on'      => Carbon::now()->subDays(20),
             'inactive_on'    => Carbon::now()->subDays(10),
-            'starts_at'      => new DateTime('2015-07-04 18:00'),
+            'starts_at'      => Carbon::now(),
             'payment_needed' => true,
         ]);
 

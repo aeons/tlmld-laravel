@@ -32,7 +32,7 @@
                 <li><a href="{{ route('admin.event.create') }}">Ny begivenhed</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Log ud</a></li>
+                <li><a href="#"><span class="fa fa-sign-out"></span> Log ud</a></li>
             </ul>
         </div>
     </div>

@@ -7,3 +7,55 @@ $icon-font-path: "/fonts/";
 body {
   padding-top: 70px;
 }
+
+div#spinner {
+  padding-top: 10%;
+}
+
+table.table-nonfluid-first tr td:first-child {
+  width: 1%;
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+.date-header {
+  @extend .page-header;
+  display: inline-block;
+  h1 {
+    display: inline-block;
+    margin-left: 10px;
+    line-height: 100%;
+  }
+}
+
+.date {
+  display: inline-block;
+  width: 60px;
+  height: 80px;
+  background: $gray-lighter;
+  @include gradient-vertical($gray-lighter, $gray-light, 0%, 100%);
+  border: 1px solid $gray;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+  p {
+    line-height: 1;
+    margin: 0;
+    font-size: $font-size-base * 3;
+    text-align: center;
+    color: $gray-darker;
+
+    span {
+      background: $brand-danger;
+      @include gradient-vertical($brand-danger, darken($brand-danger, 50%), 0%, 100%);
+      font-size: $font-size-base * 1.5;
+      font-weight: bold;
+      color: $body-bg;
+      text-transform: uppercase;
+      display: block;
+      border-top: 3px solid darken($brand-danger, 20%);
+      border-radius: 0 0 10px 10px;
+      padding: 6px 0 6px 0;
+    }
+  }
+}

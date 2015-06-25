@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Event;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
-use Carbon\Carbon;
+use App\Models\Event;
 use Debugbar;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Jenssegers\Date\Date;
 
 class EventController extends Controller
 {
@@ -61,9 +61,7 @@ class EventController extends Controller
         foreach ($keys as $key) {
             if (array_key_exists($key, $attrs)) {
                 $attr = $attrs[$key];
-                if (!empty($attr)) {
-                    $attrs[$key] = new Carbon($attr);
-                }
+                $attrs[$key] = $attrs[$key] ? new Date($attr) : null;
             }
         }
         return $attrs;
@@ -101,6 +99,7 @@ class EventController extends Controller
     {
         $this->validate($request, $this->validationRules);
         $event = Event::findBySlugOrFail($slug);
+        $event->update($this->parseDates($request->all()));
     }
 
     /**

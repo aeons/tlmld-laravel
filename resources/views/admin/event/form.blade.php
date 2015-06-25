@@ -12,17 +12,22 @@
     {!! Html::script('js/admin/da.js') !!}
 @endsection
 
-{!! BootstrapForm::horizontal([
-    'model' => $event,
-    'store' => 'admin.event.store',
-    'update' => 'admin.event.update'
-]) !!}
-{!! BootstrapForm::text('title', 'Navn') !!}
-{!! BootstrapForm::textarea('description', 'Beskrivelse') !!}
-{!! BootstrapForm::textWithAppend('starts_at', 'calendar', 'Starttidspunkt', null, ['id' => 'starts-at']) !!}
-{!! BootstrapForm::textWithAppend('ends_at', 'calendar', 'Sluttidspunkt (valgfri)', null, ['id' => 'ends-at']) !!}
-{!! BootstrapForm::textWithAppend('active_on', 'calendar', 'Tilmeldingsstart', null, ['id' => 'active-on']) !!}
-{!! BootstrapForm::textWithAppend('inactive_on', 'calendar', 'Tilmeldingsfrist (valgfri)', null, ['id' => 'inactive-on']) !!}
-{!! BootstrapForm::checkbox('payment_needed', 'Kræver betaling') !!}
-{!! BootstrapForm::submit('Gem') !!}
-{!! BootstrapForm::close() !!}
+<div id="loader" class="collapse">
+    {!! BootstrapForm::horizontal([
+        'model' => $event,
+        'store' => 'admin.event.store',
+        'update' => 'admin.event.update',
+    ]) !!}
+    {!! BootstrapForm::text('title', 'Navn') !!}
+    {!! BootstrapForm::textarea('description', 'Beskrivelse') !!}
+    {!! BootstrapForm::textWithAppend('starts_at', 'calendar', 'Starttidspunkt', null, ['id' => 'starts-at']) !!}
+    {!! BootstrapForm::textWithAppend('ends_at', 'calendar', 'Sluttidspunkt (valgfri)', null, ['id' => 'ends-at']) !!}
+    {!! BootstrapForm::textWithAppend('active_on', 'calendar', 'Tilmeldingsstart', null, ['id' => 'active-on']) !!}
+    {!! BootstrapForm::textWithAppend('inactive_on', 'calendar', 'Tilmeldingsfrist (valgfri)', null, ['id' => 'inactive-on']) !!}
+    {!! BootstrapForm::checkbox('payment_needed', 'Kræver betaling') !!}
+    {!! BootstrapForm::submitWithCancel('Gem') !!}
+    {!! BootstrapForm::close() !!}
+</div>
+<div id="spinner" class="text-center">
+    <i class="fa fa-circle-o-notch fa-spin fa-5x"></i>
+</div>
