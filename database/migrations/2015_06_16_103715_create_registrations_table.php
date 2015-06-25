@@ -22,8 +22,8 @@ class CreateRegistrationsTable extends Migration
 
             $table->unique(['event_id', 'email']);
             $table->foreign('event_id')
-                ->references('id')->on('events')
-                ->onDelete('cascade');
+                  ->references('id')->on('events')
+                  ->onDelete('cascade');
         });
     }
 

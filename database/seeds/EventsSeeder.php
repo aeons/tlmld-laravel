@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Event;
+use Tlmld\Models\Event;
 use Carbon\Carbon;
 use Faker\Factory;
 use Illuminate\Database\Seeder;
