@@ -27,7 +27,7 @@ return [
     |
     */
 
-    'model'    => App\User::class,
+    'model'    => Tlmld\User::class,
     /*
     |--------------------------------------------------------------------------
     | Authentication Table

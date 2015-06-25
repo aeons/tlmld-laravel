@@ -13,7 +13,7 @@
 
 use Faker\Generator;
 
-$factory->define(App\User::class, function (Generator $faker) {
+$factory->define(Tlmld\User::class, function (Generator $faker) {
     return [
         'name'           => $faker->name,
         'email'          => $faker->email,

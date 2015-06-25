@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace Tlmld\Models;
 
 use Carbon\Carbon;
 use Cviebrock\EloquentSluggable\SluggableInterface;
@@ -42,11 +42,6 @@ class Event extends Model implements SluggableInterface
     public function scopeCurrent($query)
     {
         return $query->where('starts_at', '>', Carbon::now());
-    }
-
-    public function asdf()
-    {
-        return $this->getDateFormat();
     }
 
     /**

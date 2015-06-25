@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace Tlmld\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests;
-use App\Models\Event;
+use Tlmld\Http\Controllers\Controller;
+use Tlmld\Http\Requests;
+use Tlmld\Models\Event;
 use Debugbar;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;

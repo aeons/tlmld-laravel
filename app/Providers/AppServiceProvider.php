@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Providers;
+namespace Tlmld\Providers;
 
-use App\Event;
+use Tlmld\Event;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\ServiceProvider;
 

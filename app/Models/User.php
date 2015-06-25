@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace Tlmld\Models;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;

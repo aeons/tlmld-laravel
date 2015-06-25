@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace Tlmld\Models;
 
 use DateTime;
 use Eloquent;

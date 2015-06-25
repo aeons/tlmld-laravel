@@ -1,5 +1,5 @@
 suites:
   main:
-    namespace: App
-    psr4_prefix: App
+    namespace: Tlmld
+    psr4_prefix: Tlmld
     src_path: app
