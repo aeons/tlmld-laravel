@@ -2,10 +2,9 @@
 
 namespace Tlmld\Http\Controllers\Admin;
 
-use Tlmld\Models\Event;
-use Tlmld\Http\Controllers\Controller;
-use Tlmld\Http\Requests;
 use Illuminate\Http\Response;
+use Tlmld\Http\Controllers\Controller;
+use Tlmld\Models\Event;
 
 class AdminController extends Controller
 {

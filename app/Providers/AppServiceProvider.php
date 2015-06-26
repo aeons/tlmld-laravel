@@ -2,7 +2,7 @@
 
 namespace Tlmld\Providers;
 
-use Tlmld\Event;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\ServiceProvider;
 
@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('*', function ($view) {
+        view()->composer('*', function (View $view) {
             $route = Request::route();
             if ($route) {
                 $action = $route->getAction();
